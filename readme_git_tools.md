@@ -1,16 +1,19 @@
-1. git show aefea
+1.git show aefea  
+
 commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545
 Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>
 Date:   Thu Jun 18 10:29:58 2020 -0400
 Update CHANGELOG.md    
  
-2. git show 85024d3
+2.git show 85024d3  
+
 commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
 Author: tf-release-bot <terraform@hashicorp.com>
 Date:   Thu Mar 5 20:56:10 2020 +0000
 v0.12.23   
  
-3.git show b8d720
+3.git show b8d720  
+
 commit b8d720f8340221f2146e4e4870bf2ee0bc48f2d5
 Merge: 56cd7859e 9ea88f22f
 Author: Chris Griggs <cgriggs@hashicorp.com>
@@ -22,7 +25,8 @@ commit 56cd7859e05c36c06b56d013b55a252d0bb7e158
 git show b8d720^2
 commit 9ea88f22fc6269854151c571162c5bcf958bee2b    
 
-4.git log v0.12.23..v0.12.24 --oneline
+4.git log v0.12.23..v0.12.24 --oneline  
+
 33ff1c03b (tag: v0.12.24) v0.12.24
 b14b74c49 [Website] vmc provider links
 3f235065b Update CHANGELOG.md
@@ -34,18 +38,21 @@ d5f9411f5 command: Fix bug when using terraform login on Windows
 dd01a3507 Update CHANGELOG.md
 225466bc3 Cleanup after v0.12.23 release  
 
-5.git log -S'func providerSource' --oneline
+5.git log -S'func providerSource' --oneline  
+
 5af1e6234 main: Honor explicit provider_installation CLI config when present
 8c928e835 main: Consult local directories as potential mirrors of providers  
 
-6.git grep globalPluginDirs
+6.git grep globalPluginDirs  
+
 commands.go:            GlobalPluginDirs: globalPluginDirs(),
 commands.go:    helperPlugins := pluginDiscovery.FindPlugins("credentials", globalPluginDirs())
 internal/command/cliconfig/config_unix.go:              // FIXME: homeDir gets called from globalPluginDirs during init, before
 plugins.go:// globalPluginDirs returns directories that should be searched for
 plugins.go:func globalPluginDirs() []string {  
 
-7.git log -S'synchronizedWriters'
+7.git log -S'synchronizedWriters'  
+
 commit bdfea50cc85161dea41be0fe3381fd98731ff786
 Author: James Bardin <j.bardin@gmail.com>
 Date:   Mon Nov 30 18:02:04 2020 -0500
