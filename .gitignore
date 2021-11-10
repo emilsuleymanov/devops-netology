@@ -1,1 +1,2 @@
-#gitignore
+#Terraform directory
+/terraform/terraform/*
