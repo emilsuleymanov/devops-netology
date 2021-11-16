@@ -33,7 +33,7 @@
 
   8.1 какой переменной можно задать длину журнала. HISTSIZE. man line 1146.
 
-![Screen4](https://github.com/emilsuleymanov/devops-netology/main/main/03-sysadmin-01-terminal/screen4.png)
+![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-01-terminal/screen4.png)
 
   8.2 
 
