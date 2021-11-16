@@ -25,31 +25,31 @@ systemd(1)─┬─GeckoMain(12371)─┬─Privileged Cont(12463)─┬─{Priv
            │                  │                        ├─{Privileged Cont}(12509)
            │                  │                        └─{Privileged Cont}(12510) 
 
-4. user@RAYbook:~$ tty
+4. user@RAYbook:$ tty
 /dev/pts/1
-user@RAYbook:~$ ls dir/ 2> /dev/pts/2
-user@RAYbook:~$ 
+user@RAYbook:$ ls dir/ 2> /dev/pts/2
+user@RAYbook:$ 
 ![Screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen1.png)
 ![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen2.png)
 
 Term2:
-user@RAYbook:~$ ls: невозможно получить доступ к 'dir/': Нет такого файла или каталога
-user@RAYbook:~$ tty
+user@RAYbook:$ ls: невозможно получить доступ к 'dir/': Нет такого файла или каталога
+user@RAYbook:$ tty
 /dev/pts/2
 
-5. vagrant@vagrant:~$ ls
-vagrant@vagrant:~$ echo "test" > input.txt
-vagrant@vagrant:~$ ls
+5. vagrant@vagrant:$ ls
+vagrant@vagrant:$ echo "test" > input.txt
+vagrant@vagrant:$ ls
 input.txt
-vagrant@vagrant:~$ cat < input.txt > output.txt
-vagrant@vagrant:~$ cat output.txt
+vagrant@vagrant:$ cat < input.txt > output.txt
+vagrant@vagrant:$ cat output.txt
 test
-vagrant@vagrant:~$ 
+vagrant@vagrant:$ 
 ![Screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen3.png)
 
-6. Да, возможно. vagrant@vagrant:~$ tty
+6. Да, возможно. vagrant@vagrant:$ tty
 /dev/pts/2
-vagrant@vagrant:~$ echo Hello from pts2 to tty1 >/dev/tty1
+vagrant@vagrant:$ echo Hello from pts2 to tty1 >/dev/tty1
 ![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen4.png)
 ![Screen5](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen5.png)
 
@@ -58,10 +58,10 @@ vagrant@vagrant:~$ echo Hello from pts2 to tty1 >/dev/tty1
 ![Screen6](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen6.png)
 ![Screen7](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen7.png)
 
-8. user@RAYbook:~$ ls dir 3>&1 1>&2 2>&3 | cat > output.txt
-user@RAYbook:~$ cat output.txt 
+8. user@RAYbook:$ ls dir 3>&1 1>&2 2>&3 | cat > output.txt
+user@RAYbook:$ cat output.txt 
 ls: невозможно получить доступ к 'dir': Нет такого файла или каталога
-user@RAYbook:~$ 
+user@RAYbook:$ 
 ![Screen8](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-02-terminal/screen8.png)
 
 9.cat /proc/$$/environ -  содержит переменные окружения. Аналогичный вывод команды - **env.**
