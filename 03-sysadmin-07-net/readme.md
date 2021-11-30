@@ -81,7 +81,7 @@ bond-downdelay 200
 
 **С маской /29 Количество адресов в подсети- 8. Количество хостов в подсети - 6.**
 
-** С маской /24 можно получить 31 подсеть с маской /29**
+**С маской /24 можно получить 31 подсеть с маской /29**
 
 ![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-07-net/screen4.png)
 
@@ -91,6 +91,6 @@ bond-downdelay 200
 
 7. Как проверить ARP таблицу в Linux, Windows? Как очистить ARP кеш полностью? Как из ARP таблицы удалить только один нужный IP?
 
-*** Windows command - netsh interface ip delete arpcache***
+***Windows command - netsh interface ip delete arpcache***
 
 ![Screen6](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-07-net/screen6.png)
