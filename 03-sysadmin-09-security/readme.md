@@ -6,7 +6,7 @@
 
 ### 2. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через Google authenticator OTP.
 
-![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-09-security/screen2.png)
+![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/03-sysadmin-09-security/screen2.jpg)
 
 ### 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 
