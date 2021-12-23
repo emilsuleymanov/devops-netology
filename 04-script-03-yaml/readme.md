@@ -2,7 +2,7 @@
 
 ### 1. Мы выгрузили JSON, который получили через API запрос к нашему сервису:
 
-![Screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/04-script-03-json/screen1.png)
+![Screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/04-script-03-yaml/screen1.png)
 
 ### 2. Доработка скрипта из предыдущего задания
 
@@ -12,5 +12,5 @@
 Формат записи YAML по одному сервису: - имя сервиса: его IP. Если в момент исполнения скрипта
 меняется IP у сервиса - он должен так же поменяться в yml и json файле.
 
-![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/04-script-03-json/screen2.png)
+![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/04-script-03-yaml/screen2.png)
 
