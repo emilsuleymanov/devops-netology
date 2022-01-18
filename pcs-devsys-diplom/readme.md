@@ -1,4 +1,4 @@
-﻿#  Курсовая работа по итогам модуля DevOps и системное администрирование
+#  Курсовая работа по итогам модуля "DevOps и системное администрирование"
 
 ### 1. Создайте виртуальную машину Linux.
 
@@ -6,13 +6,13 @@
 
 ### 2. Установите ufw и разрешите к этой машине сессии на порты 22 и 443, при этом трафик на интерфейсе localhost (lo) должен ходить свободно на все порты.
 
-![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen2.png)
+[Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen2.png)
 
 ### 3. Установите hashicorp vault 
 
 ![Screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen3.png)
 
-### 4. Cоздайте центр сертификации по инструкции и выпустите сертификат для использования его в настройке веб-сервера nginx (срок жизни сертификата — месяц).
+### 4. Cоздайте центр сертификации по инструкции (ссылка) и выпустите сертификат для использования его в настройке веб-сервера nginx (срок жизни сертификата - месяц).
 
 ![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen4.png)
 
@@ -37,7 +37,7 @@
 
 ![Screen12](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen12.png)
 
-### 7. По инструкции настройте nginx на https, используя ранее подготовленный сертификат:
+### 7. По инструкции (ссылка) настройте nginx на https, используя ранее подготовленный сертификат:
 
 ![Screen13](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen13.png)
 
@@ -49,15 +49,30 @@
 
 ![Screen16](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen16.png)
 
-### 9. Создайте скрипт, который будет генерировать новый сертификат в vault:
+### 9. Создайте скрипт, который будет генерировать новый сертификат
 
-![Screen17](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen17.png)
+```bash
+#!/usr/bin/env bash
+vault write -format=json pki_int/issue/project-dot-devel common_name="project_devel" ttl="720h" > all.crt
+cat all.crt | jq -r .data.certificate > /home/project_devel.crt
+cat all.crt | jq -r .data.issuing_ca >> /home/project_devel.crt
+cat all.crt | jq -r .data.private_key > /home/project_devel.key
+```
 
-![Screen18](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen18.png)
-
+```bash
+#!/usr/bin/env bash
+systemctl restart nginx.service
+```
 
 ### 10. Поместите скрипт в crontab, чтобы сертификат обновлялся какого-то числа каждого месяца в удобное для вас время.
-![Screen19](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen19.png)
-![Screen20](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen20.png)
-![Screen21](https://github.com/emilsuleymanov/devops-netology/blob/main/pcs-devsys-diplom/screen21.png)
 
+```
+user@user-VilrtualBox:~$ crontab -l
+1 0 1 * * /home/us/certupdate.sh
+```
+
+
+```
+root@user-VilrtualBox:~# crontab -l
+2 0 1 * * /root/restartnginx.sh
+```
