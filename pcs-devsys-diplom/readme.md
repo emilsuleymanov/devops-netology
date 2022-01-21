@@ -51,28 +51,40 @@
 
 ### 9. Создайте скрипт, который будет генерировать новый сертификат
 
-```bash
-#!/usr/bin/env bash
-vault write -format=json pki_int/issue/project-dot-devel common_name="project_devel" ttl="720h" > all.crt
-cat all.crt | jq -r .data.certificate > /home/project_devel.crt
-cat all.crt | jq -r .data.issuing_ca >> /home/project_devel.crt
-cat all.crt | jq -r .data.private_key > /home/project_devel.key
 ```
+root@user-VirtualBox:/home/user# nano script_update.sh
+#!/bin/bash
+export VAULT_ADDR=http://127.0.0.1:8200
+#Задаем переменные для вывода времени
+D=$(date +%Y-%m-%d)
+T=$(date +%H:%M:%S)
+vault status #Запускаем проверку состояния vault
+if [ $? -eq 0 ] #Если vault находится в состоянии unsealed
+then #запускаем выпуск нового секртификата
+ vault write -format=json pki_int/issue/project-dot-devel \
+  common_name="project.devel" ttl="720h" > \
+  ~/project_devel.crt
+ cat ~/project_devel.crt | jq -r .data.certificate > \
+  ~/project_devel.pem
+ cat ~/project_devel.crt | jq -r .data.ca_chain[] >> \
+  ~/project_devel.pem
+ cat ~/project_devel.crt | jq -r .data.private_key > \
+  ~project_devel.key
+ systemctl reload nginx
+ echo "The Certificate for NGINX was successfully updated at" "$D" "$T" >> \
+  /var/log/ssl/cert_update.log
+else #Если vault запечатан либо не запущен - выводим сообщение об ошибке
+ D=$(date +%Y-%m-%d)
+ T=$(date +%H:%M:%S)
+ echo "ERROR" "$D" "$T" "The Vault Server is in the sealed state" >> \
+  /var/log/ssl/cert_update.log
+fi
 
-```bash
-#!/usr/bin/env bash
-systemctl restart nginx.service
-```
+root@user-VirtualBox:/home/user# chmod +x ~/script_update.sh
 
 ### 10. Поместите скрипт в crontab, чтобы сертификат обновлялся какого-то числа каждого месяца в удобное для вас время.
 
 ```
-user@user-VilrtualBox:~$ crontab -l
-1 0 1 * * /home/us/certupdate.sh
-```
-
-
-```
 root@user-VilrtualBox:~# crontab -l
-2 0 1 * * /root/restartnginx.sh
+1 0 1 * * ~/script_update.sh
 ```
