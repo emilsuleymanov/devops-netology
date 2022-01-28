@@ -42,11 +42,11 @@ Hey, Netology
 
 Опубликуйте созданный форк в своем репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
 
-![Screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen1.png)
+![Screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen1.PNG)
 
-![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen2.png)
+![Screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen2.PNG)
 
-![Screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen3.png)
+![Screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen3.PNG)
 
  
 
@@ -112,9 +112,9 @@ https://hub.docker.com/r/emilsuleymanov/nginx/
 
  
 
-![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen4.png)
+![Screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen4.PNG)
 
-![Screen5](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen5.png)
+![Screen5](https://github.com/emilsuleymanov/devops-netology/blob/main/05-virt-03-docker/screen5.PNG)
 
  
 
