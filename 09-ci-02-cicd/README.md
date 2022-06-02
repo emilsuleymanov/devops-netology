@@ -25,9 +25,9 @@
 9. Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 
 
-[screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen1.png)
+![screen1](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen1.png)
 
-[screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen2.png)
+![screen2](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen2.png)
 
 ## Знакомство с Nexus
 
@@ -52,7 +52,7 @@
 3. Проверяем, что все файлы загрузились успешно
 4. В ответе присылаем файл `maven-metadata.xml` для этого артефекта
 
-[screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen3.png)
+![screen3](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen3.png)
 
 [maven](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/maven-metadata.xml)
 
@@ -72,11 +72,11 @@
 3. Проверяем директорию `~/.m2/repository/`, находим наш артефакт
 4. В ответе присылаем исправленный файл `pom.xml`
 
-[screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen4.png)
+![screen4](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen4.png)
 
-[screen5](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen5.png)
+![screen5](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/screen5.png)
 
-[maven](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/mvn/pom.xml) 
+[pom](https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-02-cicd/mvn/pom.xml) 
 
 ---
 
