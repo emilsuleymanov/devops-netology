@@ -32,7 +32,7 @@ dynamodb.
 
 ---
 
-** Ответ **
+**Ответ**
 
 ```
 user@RAYbook:~/07-terraform-03-basic$ terraform plan
