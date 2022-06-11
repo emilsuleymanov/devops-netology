@@ -31,7 +31,8 @@ dynamodb.
 * Вывод команды `terraform plan` для воркспейса `prod`.  
 
 ---
-*** Ответ ***
+
+** Ответ **
 
 ```
 user@RAYbook:~/07-terraform-03-basic$ terraform plan
