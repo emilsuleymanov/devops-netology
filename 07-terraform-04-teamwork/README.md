@@ -86,7 +86,7 @@ projects:
 В качестве результата задания приложите ссылку на созданный блок конфигураций. 
 
 К сожалению, я не нашёл никаких модулей под YC, а AWS не дает регистрироваться в моём регионе.
-Есть верифицированные модули, из таких по созданию `ec2` инстансов нашёл только [ec2-instance](https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest), но его разработчик из Украины и он содержит снизу приписку: `Additional terms of use for users from Russia and Belarus`
+Есть верифицированные модули, из таких по созданию `ec2` инстансов нашёл только [ec2-instance](https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest).
 
 ---
 
