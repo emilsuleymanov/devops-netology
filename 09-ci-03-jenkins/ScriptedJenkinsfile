@@ -1,0 +1,23 @@
+node("linux"){
+    stage("Git checkout"){
+        git credentialsId: 'df82c097-9401-4e96-9625-d8a8e352debe', url: 'git@github.com:aragastmatb/example-playbook.git'
+    }
+    stage("Install dependencies"){
+        dir('roles/java') {
+            checkout([
+                $class: 'GitSCM', 
+                branches: [[name: 'refs/tags/1.0.1']], 
+                extensions: [], 
+                userRemoteConfigs: [[credentialsId: 'df82c097-9401-4e96-9625-d8a8e352debe', url: 'git@github.com:netology-code/mnt-homeworks-ansible.git']]
+                ])
+        }
+    }
+    stage("Run playbook"){
+        if (params.prod_run){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+        }
+    }
+}
