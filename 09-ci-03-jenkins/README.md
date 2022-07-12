@@ -18,7 +18,7 @@
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 
-** Ответ **
+**Ответ**
 
 
 https://github.com/emilsuleymanov/devops-netology/blob/main/09-ci-03-jenkins/Jenkinsfile
