@@ -1,0 +1,36 @@
+[front]
+emilsuleymanov.ru  letsencrypt_email=testfgu16@yandex.ru domain_name=emilsuleymanov.ru
+
+[MySQL]
+db01.emilsuleymanov.ru mysql_server_id=1 mysql_replication_role=master
+db02.emilsuleymanov.ru mysql_server_id=2 mysql_replication_role=slave
+
+[app]
+app.emilsuleymanov.ru
+
+[gitlab]
+gitlab.emilsuleymanov.ru
+
+[runner]
+runner.emilsuleymanov.ru
+
+[monitoring]
+monitoring.emilsuleymanov.ru
+
+[proxy]
+emilsuleymanov.ru
+
+[MySQL:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q user@emilsuleymanov.ru"'
+
+[app:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q user@emilsuleymanov.ru"'
+
+[monitoring:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q user@emilsuleymanov.ru"'
+
+[gitlab:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q user@emilsuleymanov.ru"'
+
+[runner:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q user@emilsuleymanov.ru"'
